@@ -5,8 +5,11 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-	#make sqllite for test only bc heroku doesn't like it
-	gem 'sqlite3'
+  gem 'sqlite3', '1.3.5'
+end
+
+group :production do
+  gem 'pg', '0.12.2'
 end
 
 # Use SCSS for stylesheets
@@ -35,9 +38,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :production do
-  gem 'pg', '0.12.2'
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
